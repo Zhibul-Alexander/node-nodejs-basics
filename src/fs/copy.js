@@ -12,9 +12,9 @@ const copy = async () => {
 
     try {
         await mkdir(copyFolderPath);
-        const readdirSyncResult = await readdir(folderPath);
+        const readDirResult = await readdir(folderPath);
 
-        for (const file of readdirSyncResult) {
+        for (const file of readDirResult) {
             const filePath = join(folderPath, file);
             const copyFilePath = join(copyFolderPath, file);
             await copyFile(filePath, copyFilePath);
