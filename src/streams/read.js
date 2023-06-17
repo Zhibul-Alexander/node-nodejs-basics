@@ -7,9 +7,9 @@ const read = async () => {
     const filePath = join(folderPath,fileName)
 
     await new Promise(() => {
-        const fileStream = createReadStream(filePath, {encoding: 'utf8'});
+        const readStream = createReadStream(filePath, {encoding: 'utf8'});
 
-        fileStream.on('data', (data) => {
+        readStream.on('data', (data) => {
             process.stdout.write(data);
         })
     })
